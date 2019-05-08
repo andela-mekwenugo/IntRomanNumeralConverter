@@ -11,7 +11,11 @@ class IntergerToRomanNumeral(object):
         """Initialize inp and type of inp."""
         self.inp = inp
         if not isinstance(inp, int):
-            raise TypeError("Expected an integer but got - %s" % type(inp))
+            raise TypeError("Please enter an integer")
+
+        # Numbers less than zero and greater than 3,999 are not represented.
+        if not 0 < inp < 4000:
+            raise ValueError("Integer input must be between 1 and 3999")
 
     def convert_int_to_numeral(self):
         """Convert an integer to a Roman numeral."""
